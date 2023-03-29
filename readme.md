@@ -364,6 +364,14 @@
 
      > 通过运行`npx husky add .husky/pre-commit 'npm run pre-check'`命令让 husky 支持监听 pre-commit 钩子，监听后执行上面定义的 npm run pre-check 语法检测
 
+### 代码提交时检测 commit 备注规范
+
+1. 安装和配置 commitlint
+
+   - 首先安装@commitlint/config-conventional 与 @commitlint/cli 依赖，并在根目录创建 commitlint.config.js 文件添加相关配置。
+
+   - 执行`npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`命令,使 husky 支持监听 commit-msg 钩子，在钩子函数中使用 commitlint 验证。
+
 ## 参考
 
 [webpack5 从零搭建完整的 react18+ts 开发和打包环境](https://juejin.cn/post/7111922283681153038)
