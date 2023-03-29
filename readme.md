@@ -333,10 +333,10 @@
 
       > 上述 eslint 会检测 src 文件下所有的 ts,tsx 文件，虽然功能可以实现，但是当项目文件多的时候，检测的文件会很多，所花费的事件也就越长。正常情况下其实只需要检测提交到暂存区的文件，不在暂存区的文件就可以不用检测，而 lint-staged 就是来帮我们做这件事情的。
 
+      > 修改 package.json 脚本的 eslint 的配置，--max-warning=0 表明警告也会中断命令
+
       ```json
-      //修改package.json脚本的eslint的配置，--max-warning=0表明警告也会中断命令
       "eslint":"eslint --max-warning=0"
-      //配置lint-staged
       "lint-staged":{
       	"src/**/*.{tx,tsx}":[
       		"npm run eslint"
@@ -375,3 +375,5 @@
 ## 参考
 
 [webpack5 从零搭建完整的 react18+ts 开发和打包环境](https://juejin.cn/post/7111922283681153038)
+
+[配置 React+ts 项目完整的代码及样式格式和 git 提交规范](https://juejin.cn/post/7101596844181962788)
